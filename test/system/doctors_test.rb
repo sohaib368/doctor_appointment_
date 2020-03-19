@@ -1,41 +1,43 @@
-require "application_system_test_case"
+# frozen_string_literal: true
+
+require 'application_system_test_case'
 
 class DoctorsTest < ApplicationSystemTestCase
   setup do
     @doctor = doctors(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit doctors_url
-    assert_selector "h1", text: "Doctors"
+    assert_selector 'h1', text: 'Doctors'
   end
 
-  test "creating a Doctor" do
+  test 'creating a Doctor' do
     visit doctors_url
-    click_on "New Doctor"
+    click_on 'New Doctor'
 
-    click_on "Create Doctor"
+    click_on 'Create Doctor'
 
-    assert_text "Doctor was successfully created"
-    click_on "Back"
+    assert_text 'Doctor was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Doctor" do
+  test 'updating a Doctor' do
     visit doctors_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    click_on "Update Doctor"
+    click_on 'Update Doctor'
 
-    assert_text "Doctor was successfully updated"
-    click_on "Back"
+    assert_text 'Doctor was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Doctor" do
+  test 'destroying a Doctor' do
     visit doctors_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Doctor was successfully destroyed"
+    assert_text 'Doctor was successfully destroyed'
   end
 end

@@ -1,17 +1,17 @@
+# frozen_string_literal: true
+
 class FreeDoctorsController < ApplicationController
-  before_action :set_free_doctor, only: [:show, :edit, :update, :destroy]
+  before_action :set_free_doctor, only: %i[show edit update destroy]
 
   # GET /free_doctors
   # GET /free_doctors.json
   def index
-    @free_doctors =Doctor.where.not(Appointment.all)
-
+    @free_doctors = Doctor.where.not(Appointment.all)
   end
 
   # GET /free_doctors/1
   # GET /free_doctors/1.json
-  def show
-  end
+  def show; end
 
   # GET /free_doctors/new
   def new
@@ -19,8 +19,7 @@ class FreeDoctorsController < ApplicationController
   end
 
   # GET /free_doctors/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /free_doctors
   # POST /free_doctors.json
@@ -63,13 +62,14 @@ class FreeDoctorsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_free_doctor
-      @free_doctor = FreeDoctor.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def free_doctor_params
-      params.fetch(:free_doctor, {})
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_free_doctor
+    @free_doctor = FreeDoctor.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def free_doctor_params
+    params.fetch(:free_doctor, {})
+  end
 end
