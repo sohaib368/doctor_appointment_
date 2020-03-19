@@ -1,0 +1,2 @@
+class FreeDoctor < ApplicationRecord
+end
